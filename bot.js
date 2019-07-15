@@ -816,5 +816,31 @@ const cd = require("countdown")
 
 
       
+	
+	
+	
+	 const cuttweet = [
+     'Head ',
+     'Tales',
+     'Head ', 
+     'Tales',	 
+]
+	 
+ 
+ client.on('message', message => {
+   if (message.content.startsWith("!flip")) {
+                if(!message.channel.guild) return message.reply('** This command only for servers**');
+  var embed = new Discord.RichEmbed()
+  .setColor('RANDOM')
+   .setThumbnail(message.author.avatarURL)
+ .addField('flip' ,
+  `${cuttweet[Math.floor(Math.random() * flip.length)]}`)
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
+    }
+});
+	
+	
+	
       
 client.login(process.env.BOT_TOKEN);
