@@ -792,18 +792,6 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(15000)})
 
 
 
-client.on('message',async message => {
-const cd = require("countdown")
-      if (msg.content.toLowerCase() === `${prefix}timer`) {
-        let hi = await message.channel.send(`Wait.`)
-          setInterval(async function () {
-            let thedate = new Date().getTime();
-            let ramadan = new Date("May 6, 2019 00:00:00").getTime();
-            var timespan = cd(thedate, timer);
-            hi.edit(`Remaining days until ramadan comes\n${timespan}`)
-          }, 1000);
-      }
-      
       
       
 client.login(process.env.BOT_TOKEN);
