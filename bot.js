@@ -802,23 +802,25 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(15000)})
 })
 
 
-client.on('message',async message => {
-const cd = require("countdown")
-      if (msg.content.toLowerCase() === `${prefix}timer`) {
-        let hi = await message.channel.send(`Wait.`)
-          setInterval(async function () {
-            let thedate = new Date().getTime();
-            let ramadan = new Date("May 6, 2019 00:00:00").getTime();
-            var timespan = cd(thedate, timer);
-            hi.edit(`Remaining sec until timer comes\n${timespan}`)
-          }, 1000);
-      }
 
 
       
 	
 	
-	
+	client.on('message', message => {
+  if(!message.channel.guild) return;
+  if (message.content.startsWith(prefix + 'ping')) {
+  if(!message.channel.guild) return;
+  var msg = `${Date.now() - message.createdTimestamp}`
+  var api = `${Math.round(client.ping)}`
+  if (message.author.bot) return;
+  let ping = new Discord.RichEmbed()
+  .addField(`**:ping_pong: Ping: \`${msg}\`**`,`** **`)
+  if(msg < 80) ping.setColor('GREEN')
+  if(msg >= 80 && msg < 140) ping.setColor('ORANGE')
+  if(msg >= 140) ping.setColor('RED')
+  message.channel.send(ping)}
+  });
 	
 	
 	
