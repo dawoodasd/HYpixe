@@ -4,6 +4,20 @@ const prefix = '!'
 const devs = ['379952455003406338'];
 
 
+
+client.on('ready', () => {
+    console.log(`~~~~~~~~~~~~~~~~~`);
+    console.log(`Logging into Discord`);
+    console.log(`~~~~~~~~~~~~~~~~~~~~~`);
+    console.log(`on  ${client.guilds.size} Servers `);
+    console.log(`~~~~~~~~~~~~~~~~~~~~~~~~`);
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setGame(`#Hyped System |!Help`,"http://twitch.tv/y04zgamer")
+    client.user.setStatus("dnd")
+ });
+
+
+
 client.on('message', message => {
   if (message.author.codes) return;
   if (!message.content.startsWith(prefix)) return;
